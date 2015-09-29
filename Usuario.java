@@ -9,22 +9,22 @@ package baseprojetojava;
  *
  * @author Luccas
  */
-public class Usuario {
+public class Usuario extends ItensDeDB {
     private int id;
     private String nome;
     //TODO: Add more relevant fields.
     
     //CLASS Fields
     
-    static private int toId = 0;
+    //static private int toId = 0;
     
     
     //Constructor
     
     public Usuario()
     {
-       this.id = toId;
-       toId ++;
+       this.id = super.getID();
+       
     }
     
     //Instace Methods

@@ -11,11 +11,16 @@ package baseprojetojava;
  * TODO: Manage more DB instructions
  * TODO: Use of GENERICS for mutiples classes use
  * @author Luccas
+ * @param <T> : Indica um dos objetos Usuario
+ *
  */
-public interface DBConnection {
+public interface DBConnection{
     
-    public void addOnDB(Usuario u);
+    public void addOnDB(Object o);
     
-    public Usuario fetchOfDB(int id);
+    public Object fetchOfDB(int id);
+    public void listaTabelaUsuarios();//DEBUG ONLY
+    
+    
     
 }

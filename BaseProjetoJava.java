@@ -16,9 +16,10 @@ public class BaseProjetoJava {
      */
     public static void main(String[] args) {
         
-        DBConnection dbConnection = new UsuarioDB();
+        DBConnection dbConnection = new BancoDados();
         
-        int[] tabelaId = new int[3];
+        
+        int[] tabelaId = new int[6];
         
         Usuario user1 = new Usuario();
         user1.setNome("Jão");
@@ -35,8 +36,24 @@ public class BaseProjetoJava {
         tabelaId[2] = user3.getId();
         dbConnection.addOnDB(user3);
         
+        Treinador tr1 = new Treinador();
+        tr1.setNome("Maromba 1");
+        tabelaId[3] = tr1.getId();
+        dbConnection.addOnDB(tr1);
+        
+        Treinador tr2 = new Treinador();
+        tr2.setNome("Maromba 2");
+        tabelaId[4] = tr2.getId();
+        dbConnection.addOnDB(tr2);
+        
+        Treinador tr3 = new Treinador();
+        tr3.setNome("Maromba 3");
+        tabelaId[5] = tr3.getId();
+        dbConnection.addOnDB(tr3);
+        
+        
         for(Integer i : tabelaId) {
-            Usuario retorno;
+            Object retorno;
             retorno = dbConnection.fetchOfDB(i);
             System.out.println(retorno.toString());
         }
